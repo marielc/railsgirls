@@ -1,0 +1,30 @@
+<h1>Listing ideas</h1>
+
+<H2>This is how i'm learning to code, so if you don't submit any ideas, there will be much sadness in the force.</H2>
+<h1>I SAID SADNESS.</h1>
+
+<table>
+  <tr>
+    <th>Wicked-ass Idea Name</th>
+    <th>Super-Awesome Description</th>
+    <th>Whoa - Picture</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @ideas.each do |idea| %>
+  <tr>
+    <td><%= idea.name %></td>
+    <td><%= idea.description %></td>
+    <td><%= idea.picture %></td>
+    <td><%= link_to 'Show', idea %></td>
+    <td><%= link_to 'Edit', edit_idea_path(idea) %></td>
+    <td><%= link_to 'Destroy', idea, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Idea', new_idea_path %>
